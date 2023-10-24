@@ -3,9 +3,16 @@ class ProductsController < ApplicationController
     @products = Product.all
     render :index
   end
-  # def one_product
-  #   @product = Product.first
-  #   render :show
-  # end
-  # def second_product
+  def one_product
+    @product = Product.first
+    render :show
+  end
+  def second_product
+    @product = Product.second
+    render :show
+  end
+  def third_product
+    @product = Product.third
+    render :show
+  end
 end
