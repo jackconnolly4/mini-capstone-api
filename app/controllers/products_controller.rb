@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
       updated_at: product.updated_at,
     }
   end
+  def create 
+    @product = Product.new(name: params["name"], price: params["price"], image_url: params["image_url"], description: params["description"])
+    @product.save
+    render :show
+  end
   # def one_product
   #   @product = Product.find_by(id: params["id"])
   #   render :show
