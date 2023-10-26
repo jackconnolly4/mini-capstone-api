@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find_by(id: params["id"])
     @product.destroy
+    render json:{message: "File was deleted"}
   end
   # def one_product
   #   @product = Product.find_by(id: params["id"])
