@@ -10,4 +10,8 @@
 # product = Product.new(name:"Pinkerton", price: 25, image_url: "weezer.com", description: "Pinkerton album by Weezer on cassette")
 # product = Product.new(name:"Long Season", price: 45, image_url: "fishmans.come", description: "Long Season album by Fishmans on exclusive blue vinyl")
 
-# Supplier.create(name: "Newbury Comics",)
+# Supplier.create(name: "Newbury Comics", email: "sales@newburycomics.com", phone_number: "617-555-9654")
+
+# Supplier.create(name: "Amoeba Records", email: "sales@amoeba.com", phone_number: "867-555-5309")
+
+# Supplier.create(name:"Warp Records", email: "sales@warp.co.uk", phone_number: "+44 55-6782-3456")
