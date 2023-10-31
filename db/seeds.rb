@@ -15,3 +15,10 @@
 # Supplier.create(name: "Amoeba Records", email: "sales@amoeba.com", phone_number: "867-555-5309")
 
 # Supplier.create(name:"Warp Records", email: "sales@warp.co.uk", phone_number: "+44 55-6782-3456")
+
+# Image.create(url: "https://64.media.tumblr.com/51310aa3372b850d99c0e49ca4d39be0/92ce0dda783ffed0-a7/s1280x1920/355a3d09fd420f6531d6078022149b4adb408ba1.png", description: "pod pic 1")
+
+# Image.create(url: "https://www.turntablelab.com/cdn/shop/files/ween-thepod-fuscus1_1024x1024.jpg?v=1696348112", description: "pod pic 2")
+
+# Image.create(url: "https://assets.rootsvinylguide.com/pictures/primus-sailing-the-seas-of-cheese-yellow-vinyl-record-lp-les-claypool-south-park_3164724", description: "seas of cheese")
+
