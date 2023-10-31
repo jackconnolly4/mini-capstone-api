@@ -14,10 +14,13 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
-  def images
-    Images.where(product_id: id)
-  end
+  belongs_to :supplier
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
+  has_many :images
+  # def images
+  #   Images.where(product_id: id)
+  # end
 end
