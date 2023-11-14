@@ -5,13 +5,17 @@ class ProductsController < ApplicationController
   end
 
   def show
-    product = Product.find_by(id: params["id"])
+    @product = Product.find_by(id: params["id"])
     render :show
   end
   def create 
-    @product = Product.new(name: params["name"], price: params["price"],  description: params["description"])
+    @product = Product.new(name: params["name"], price: params["price"],  description: params["description"], supplier_id: params["supplier_id"])
     @product.save
+    if @product.valid?
     render :show
+    else  
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
   def update
     @product = Product.find_by(id: params["id"])
