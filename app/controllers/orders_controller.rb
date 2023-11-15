@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   def create
-    @order = Order.create(user_id: current_user.id, product_id: params["product_id"],quantity: params["quantity"],subtotal: params["subtotal"], tax: params["tax"],total: params["total"])
+    product = Product.find(params["product_id"])
+    price = product.price
+    subtotal = (price * params["quantity"].to_i)
+    @order = Order.create(user_id: current_user.id, product_id: params["product_id"], quantity: params["quantity"], tax: (subtotal * 0.09), total: (subtotal + price))
     if @order.valid?
       render :show
       else  
