@@ -24,9 +24,12 @@ class Product < ApplicationRecord
   #   Images.where(product_id: id)
   # end
 
-  has_many :orders
+  # has_many :orders
 
   has_many :category_products
+
+  has_many :carted_products
+  has_many :users, through: :carted_products
 
 
   # has_many :categories, through: :category_products
