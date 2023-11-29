@@ -13,4 +13,11 @@ class CartedProductsController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def index
+    @carted_products = current_user.carted_products.select{|product|product.status == "carted"}
+    
+    render :index
+
+  end
 end

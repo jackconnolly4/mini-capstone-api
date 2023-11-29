@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get "/orders" => "orders#index"
 
   post "/carted_products" => "carted_products#create"
+  get "/carted_products" => "carted_products#index"
 
 end
