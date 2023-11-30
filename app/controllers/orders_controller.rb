@@ -3,10 +3,7 @@ class OrdersController < ApplicationController
   def create
     carted_products = current_user.carted_products.where(status: "carted")
 
-    pp "ALL GOOD"
-
     calculated_subtotal = 0
-    pp calculated_subtotal
 
     carted_products.each do |carted_product|
       calculated_subtotal += carted_product.quantity.to_f * carted_product.product.price.to_f
@@ -14,9 +11,6 @@ class OrdersController < ApplicationController
 
     calculated_tax = calculated_subtotal * 0.09
     calculated_total = calculated_subtotal + calculated_tax
-
-    pp calculated_subtotal
-    pp calculated_tax
 
     @order = Order.create(user_id: current_user.id, subtotal: calculated_subtotal, tax: calculated_tax, total: calculated_total)
     if @order.save
